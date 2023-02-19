@@ -3,40 +3,35 @@ import React from "react";
 export default class CounterClass extends React.Component {
   constructor() {
     super();
-    this.handleOneMoreClickEvent = this.handleOneMoreClickEvent.bind(this);
+    this.state = {
+      counter: 0,
+      lastAction: 'none'
+    }
   }
 
   render() {
-    // const { name, age } = this.props;
-
-    const handleClickEvent = function () {
-      console.log('Fn Expression:', this);
-      // console.log('Fn Expression called by', name);
-    } 
-
-
-    const handleAnotherClickEvent = () => {
-      console.log('Arrow Fn:', this);
-      // console.log('Arrow Fn called by', name);
+    const handleIncrementClick = () => {
+      // this.state.counter = 15; // Wrong
+      this.setState({ 
+        counter: this.state.counter + 1,
+        lastAction: 'Increased'
+      });
     }
-    
+
+    const handleDecrementClick = () => {
+      this.setState({
+        counter: this.state.counter - 1,
+        lastAction: 'Decreased'
+      });
+    }
+
     return (
       <div>
-        Class: {this.props.name}, {this.props.age}
-        <button onClick={handleClickEvent}>
-          Click here
-        </button>
-        <button onClick={handleAnotherClickEvent}>
-          Click here too
-        </button> 
-        <button onClick={this.handleOneMoreClickEvent}>
-          One more click
-        </button>
+        Counter: {this.state.counter}
+        <div>Last Action: {this.state.lastAction}</div>
+        <button onClick={handleIncrementClick}>Increase</button>
+        <button onClick={handleDecrementClick}>Increase</button>
       </div>
     );
-  }
-
-  handleOneMoreClickEvent = () => {
-    console.log('Method called by', this.props.name);
   }
 }

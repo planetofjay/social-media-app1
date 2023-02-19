@@ -12,23 +12,11 @@ export default function App() {
   //   console.log('Button clicked');
   // }
 
-  const sayHi = (name) => {
-    console.log('Hi', name);
-    console.log('How are you?');
-  }
-
   return (
     <>
       <Header />
       <Posts />
       <Footer />
-
-      <button onClick={() => sayHi('Jay')}>
-        Say Hi to Jay
-      </button>
-      <button onClick={() => sayHi('Mary')}>
-        Say Hi to Mary
-      </button>
     </>
   );
 }
