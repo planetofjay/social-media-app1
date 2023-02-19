@@ -1,26 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Posts from "./components/Posts";
+import Footer from "./components/Footer";
 
-// comment
-function App() {
+export default function App() {
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   console.log('Data sent!');
+  // }
+
+  // const handleClick = () => {
+  //   console.log('Button clicked');
+  // }
+
+  const sayHi = (name) => {
+    console.log('Hi', name);
+    console.log('How are you?');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Posts />
+      <Footer />
+
+      <button onClick={() => sayHi('Jay')}>
+        Say Hi to Jay
+      </button>
+      <button onClick={() => sayHi('Mary')}>
+        Say Hi to Mary
+      </button>
+    </>
   );
 }
-
-export default App;
