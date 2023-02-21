@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { categories, statuses } from "../../includes/variables";
+import './styles.scss';
 
 export default function Form({ onAddPost }) {
   const [title, setTitle] = useState('');
@@ -67,7 +68,7 @@ export default function Form({ onAddPost }) {
   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form className="form-component" onSubmit={handleFormSubmit}>
       <hr />
 
       {/* Conditionally display the success message */}

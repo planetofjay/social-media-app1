@@ -1,0 +1,29 @@
+@import './../../styles/variables.scss';
+
+.form-component {
+  div {
+    margin: 5px;
+    padding: 5px;
+    border: solid aqua 5px;
+  }
+
+  label {
+    color: $primary;
+
+    input,
+    textarea,
+    select {
+      color: #fff;
+      background-color: $primary;
+      border: none;
+      margin-left: 10px;
+    }
+  }
+
+  button,
+  ::-webkit-file-upload-button {
+    @include button-style(blue, 30px) {
+      margin-left: 50px;
+    }
+  }
+} 

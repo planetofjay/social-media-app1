@@ -1,0 +1,14 @@
+$primary: green;
+
+@mixin button-style($color, $padding) {
+  border: solid $primary 5px;
+  color: $color;
+  font-weight: bold;
+  padding: $padding;
+  font-size: 30px;
+
+  &:hover {
+    color: yellow;
+    @content;
+  }
+}

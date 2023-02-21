@@ -1,0 +1,55 @@
+/*  First use SCSS
+* the most used features:
+* Nesting,
+* Variables,
+* Import,
+* Mixins,
+* Interpolation
+*/
+
+@import '../../../styles/variables.scss';
+
+.post-component {
+  h3 {
+    color: yellow;
+    margin: 10%;
+    background-color: $primary;
+  }
+
+  .post-text {
+    color: blue;
+    font-size: 25px;
+    text-decoration: underline;
+  }
+
+  button {
+    @include button-style(red, 15px) {
+      text-decoration: underline;
+      text-transform: uppercase;
+    }
+  }
+
+  .promote-yes,
+  .promote-no {
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;  
+
+    strong {
+      color: yellow;
+    }
+  }
+
+  .promote-yes {
+    background-color: green;
+  }
+
+  .promote-no {
+    background-color: darkred;
+  }
+
+  .too-many-dislikes {
+    color: fuchsia;
+    font-weight: bold;
+  }
+}
