@@ -4,9 +4,9 @@ import countPrimeNumbers from "../prime";
 export default function CounterFunction({ userName }) {
   const [counter, setCounter] = useState(3);
   const [lastAction, setLastAction] = useState('none');
-  const [maxNumber, setMaxNumber] = useState(null);
-  const [primeNumbers, setPrimeNumbers] = useState(null);
-  const [isCalculating, setIsCalculating] = useState(true);
+  // const [maxNumber, setMaxNumber] = useState(null);
+  // const [primeNumbers, setPrimeNumbers] = useState(null);
+  // const [isCalculating, setIsCalculating] = useState(true);
 
   // useEffect _ Executed on every render.
   useEffect(() => {

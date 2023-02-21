@@ -1,5 +1,5 @@
 import React, { createRef } from "react";
-import countPrimeNumbers from "../prime"
+
 export default class CounterClass extends React.Component {
   constructor() {
     super();

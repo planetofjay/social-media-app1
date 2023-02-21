@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { categories, statuses } from "../../includes/variables";
 
 export default function Form({ onAddPost }) {
   const [title, setTitle] = useState('');
@@ -55,20 +56,6 @@ export default function Form({ onAddPost }) {
       inputFile.current.value = '';
     }
   }
-
-  const categories = [
-    { id: 'edu', text: 'Education' },
-    { id: 'ent', text: 'Entertainment' },
-    { id: 'gam', text: 'Gaming' },
-    { id: 'nws', text: 'News' },
-    { id: 'oth', text: 'Other' }
-  ];
-
-  const statuses = [
-    { id: 'd', text: 'Draft' },
-    { id: 'p', text: 'Published' },
-    { id: 'a', text: 'Archived' }
-  ];
 
   const handlePictureSelection = (event) => {
     const file = event.target.files[0];
