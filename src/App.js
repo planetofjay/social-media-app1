@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Form from "./components/Form";
 import { useState } from "react";
 import uuid from "react-uuid";
+import Playground from "./playground";
 
 export default function App() {
   // const handleSubmit = (event) => {
@@ -14,7 +15,20 @@ export default function App() {
   // const handleClick = () => {
   //   console.log('Button clicked');
   // }
-  const [posts, setPosts] = useState([]);
+  const initialPosts = [
+    {
+      id: uuid(),
+      title: 'My Post Title',
+      description: 'This is a description to my post.',
+      category: 'ent',
+      promote: true,
+      status: 'p',
+      picture: null,
+      likes: 0,
+      dislikes: 0
+    }
+  ];
+  const [posts, setPosts] = useState(initialPosts);
 
   const handleAddPost = (title, description, category, promote, status, picture) => {
     const updatedPosts = [...posts];
@@ -57,17 +71,18 @@ export default function App() {
   }
 
   return (
-    <>
-      <Header />
-      <Posts 
-        posts={posts} 
-        onPostLike={handlePostLike}
-        onPostDislike={handlePostDislike}
-      />
-      <Form 
-        onAddPost={handleAddPost}
-      />
-      <Footer />
-    </>
+    <Playground />
+    // <>
+    //   <Header />
+    //   <Posts 
+    //     posts={posts} 
+    //     onPostLike={handlePostLike}
+    //     onPostDislike={handlePostDislike}
+    //   />
+    //   <Form 
+    //     onAddPost={handleAddPost}
+    //   />
+    //   <Footer />
+    // </>
   );
 }
