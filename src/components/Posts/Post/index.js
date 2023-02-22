@@ -1,5 +1,6 @@
 import { getCategory, getStatus } from "../../../includes/variables";
 import './styles.scss';
+import { BiLike, BiDislike } from "react-icons/bi";
 
 export default function Post({ 
   id, 
@@ -28,32 +29,46 @@ export default function Post({
     ? 'promote-yes' 
     : 'promote-no';
 
-  const dislikeStyle = dislikes >= 10
-    ? 'too-many-dislikes'
-    : '';
-
   return (
     <div className="post-component">
       <h3>{title}</h3>
-      <img src={picture} alt={title} width={100} />
-      <div className='post-text'>{description}</div>
-      <div>Category: {getCategory(category)}</div>
-      <div className='post-text'>Status: {getStatus(status)}</div>
-      <div className={promoteStyle}>
-        Promote: 
-        <strong>{promote ? 'Yes' : 'No'}</strong>
+
+      <div className="description">
+        <img src={picture} alt={title} />
+        <span>{description}</span>
       </div>
 
-      <div>Likes: {likes}</div>
-      <button onClick={handleLikeClick}>Like</button>
-
-      <div 
-        className={dislikeStyle}
-        style={{ fontSize: 10 + dislikes }}
-      >
-        Dislikes: {dislikes}
+      <div className="info">
+        <div>
+          Category:
+          <strong>{getCategory(category)}</strong>
+        </div>
+        <div>
+          Status:
+          <strong>{getStatus(status)}</strong>
+        </div>
+        <div className={promoteStyle}>
+          Promote:
+          <strong>{promote ? 'Yes' : 'No'}</strong>
+        </div>
       </div>
-      <button onClick={handleDislikeClick}>Dislike</button>
+
+      <div className="rate">
+        <button 
+          title='I like this'
+          className='like'
+          onClick={handleLikeClick}
+        >
+          <BiLike /> {likes}
+        </button>
+        <button
+          title='I dislike this'
+          className="dislike"
+          onClick={handleDislikeClick}
+        >
+          <BiDislike /> {dislikes}
+        </button>
+      </div>
     </div>
   );
 } 

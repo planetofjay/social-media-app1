@@ -16,4 +16,90 @@
   @include breakpoint-large {
     width: calc(33.33% - 2rem);
   }
+
+  h3 {
+    margin: 0 0 1rem 0;
+    font-family: $title-font;
+    font-size: 28px;
+    font-weight: normal;
+    color: $primary-color;
+  }
+
+  .description {
+    display: flex;
+    align-items: flex-start;
+
+    img {
+      max-width: 120px;
+      margin-right: 15px;
+    }
+
+    span {
+      color: $secondary-color;
+      line-height: 1.4rem;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+
+    div {
+      font-size: 0.8rem;
+      color: $gray-color;
+      margin: 1.5rem 1.5rem 0 0;
+
+      strong {
+        display: block;
+        color: $secondary-color;
+        font-size: 1rem;
+      }
+
+      &.promote-yes strong {
+        color: $success-color;
+      }
+
+      &.promote-no strong {
+        color: $danger-color;
+      }
+    }
+  }
+
+  .rate {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    button {
+      border: none;
+      font-size: 1rem;
+      color: $secondary-color;
+      display: flex;
+      align-items: center;
+      padding: 7px 15px;
+      cursor: pointer;
+
+      svg {
+        margin-right: 0.5rem;
+        font-size: 1.5rem;
+      } 
+
+      &.like {
+        border-radius: 20px 0 0 20px;
+        border-right: solid 1px $border-color;
+  
+        svg {
+          color: $success-color;
+        }
+      }
+  
+      &.dislike {
+        border-radius: 0 20px 20px 0;
+  
+        svg {
+          color: $danger-color;
+        }
+      }
+    }
+  }
 }
