@@ -1,29 +1,103 @@
-// @import './../../styles/variables.scss';
+@import '../../styles/variables.scss';
 
-// .form-component {
-//   div {
-//     margin: 5px;
-//     padding: 5px;
-//     border: solid aqua 5px;
-//   }
+.form-component {
+  padding: 2rem;
+  color: $secondary-color;
 
-//   label {
-//     color: $primary;
+  @include breakpoint-small {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-//     input,
-//     textarea,
-//     select {
-//       color: #fff;
-//       background-color: $primary;
-//       border: none;
-//       margin-left: 10px;
-//     }
-//   }
+  &>div {
+    margin-bottom: 1rem;
+  }
 
-//   button,
-//   ::-webkit-file-upload-button {
-//     @include button-style(blue, 30px) {
-//       margin-left: 50px;
-//     }
-//   }
-// } 
+  input[type='text'],
+  textarea,
+  select {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    color: $secondary-color;
+    border: solid 1px $border-color;
+  }
+
+  .promote-field,
+  .status-field {
+    display: flex;
+    align-items: center;
+
+    label {
+      display: flex;
+      align-items: center;
+      color: $text-color;
+      line-height: 1.2rem;
+
+      input {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .status-field label {
+    margin-left: 1rem;
+  }
+
+  fieldset {
+    border: solid 1px $border-color;
+    margin-bottom: 2rem;
+    display: flex;
+
+    input {
+      width: 100%;
+    }
+  }
+
+  button, 
+  ::-webkit-file-upload-button {
+    background-color: $secondary-color;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 10px 20px;
+  }
+
+  .form-validate {
+    color: $danger-color;
+    border: solid 1px $danger-color;
+    border-left-width: 7px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+      font-weight: normal;
+
+      li {
+        list-style: circle;
+        list-style-position: inside;
+        padding: 0 0 0 10px;
+        margin: 5px 0 0;
+      }
+    }
+  }
+
+  .success-message {
+    color: $success-color;
+    border: solid 1px $success-color;
+    border-left-width: 7px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}

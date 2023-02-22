@@ -14,12 +14,10 @@ header.main {
 
     @include breakpoint-small {
       font-size: 60px;
-      color: blue;
     }
 
     @include breakpoint-large {
       font-size: 70px;
-      color: fuchsia;
     }
   }
 
@@ -32,12 +30,10 @@ header.main {
 
     @include breakpoint-small {
       font-size: 36px;
-      color: red;
     }
 
     @include breakpoint-large {
       font-size: 42px;
-      color: lime;
     }
   }
 }

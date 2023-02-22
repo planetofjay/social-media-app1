@@ -1,7 +1,8 @@
+import './styles.scss';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="main">
       Copyright &copy; Jay L.
     </footer>
   );

@@ -69,22 +69,18 @@ export default function Form({ onAddPost }) {
 
   return (
     <form className="form-component" onSubmit={handleFormSubmit}>
-      <hr />
 
       {/* Conditionally display the success message */}
       {showSuccess && (
-        <>
-          <p>
-            <strong>Form successfully submitted!</strong>
-          </p>
-          <hr />
-        </>
+        <div className="success-message">
+          Form successfully submitted!
+        </div>
       )}
 
 
       {/* Conditionally display the error message */}
       {errorMessages.length > 0 && (
-        <div>
+        <div className="form-validate">
           Invalid data:
           <ul>
             {errorMessages.map((error, index) => (
@@ -141,7 +137,7 @@ export default function Form({ onAddPost }) {
       </div>
       
       {/* Promote Field */}
-      <div>
+      <div className="promote-field">
         <label>
           <input 
             type='checkbox' 
@@ -153,7 +149,7 @@ export default function Form({ onAddPost }) {
       </div>
 
       {/* Status Field (Draft, Publish, Archive) */}
-      <div>
+      <div className="status-field">
         Status:
         {statuses.map((item) => (
           <label key={item.id}>
@@ -179,16 +175,16 @@ export default function Form({ onAddPost }) {
             onChange={handlePictureSelection}
             ref={inputFile}
           />  
-
-          {/* Conditionally preview the image */}
-          {picture !== '' && (
-            <img 
-              src={picture} 
-              alt='Preview'
-              width={100}
-            />            
-          )}
         </label>
+
+        {/* Conditionally preview the image */}
+        {picture !== '' && (
+          <img 
+            src={picture} 
+            alt='Preview'
+            width={100}
+          />            
+        )}
       </fieldset>
 
       <button>Send</button>
