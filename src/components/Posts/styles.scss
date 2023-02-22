@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+main.post-list {
+  padding: 2rem;
+  background-color: $background-color;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakpoint-small {
+    padding-right: 0;
+  }
+
+  .total-rate {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 100%;
+    color: $secondary-color;
+  }
+}
