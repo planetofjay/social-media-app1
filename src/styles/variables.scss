@@ -1,17 +1,4 @@
-// $primary: green;
-
-// @mixin button-style($color, $padding) {
-//   border: solid $primary 5px;
-//   color: $color;
-//   font-weight: bold;
-//   padding: $padding;
-//   font-size: 30px;
-
-//   &:hover {
-//     color: yellow;
-//     @content;
-//   }
-// }
+// EVERY variables for scss 
 $title-font: 'Lobster', cursive;
 $body-font: 'Roboto', sans-serif;
 
@@ -23,3 +10,23 @@ $background-color: #e1e1e9;
 $border-color: #c2c2c6;
 $success-color: #0dc729;
 $danger-color: #cd2424;
+
+@mixin breakpoint($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin breakpoint-small {
+  @include breakpoint(600px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-large {
+  @include breakpoint(1200px) {
+    @content;
+  }
+}
+
+// You can create xs, xl or xxl mixin if you want
