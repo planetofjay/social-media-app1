@@ -2,4 +2,28 @@
 
 .settings-component {
   padding: 1rem;
+
+  h1 {
+    color: $primary-color;
+    margin: 0;
+    padding: 0;
+  }
+
+  .field {
+    padding-top: 0.5rem;
+
+    label {
+      display: flex;
+      align-items: center;
+      color: $text-color;
+      line-height: 1.2rem;
+
+      input {
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
 }
