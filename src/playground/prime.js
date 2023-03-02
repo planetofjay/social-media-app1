@@ -1,4 +1,5 @@
 export default function countPrimeNumbers(maxNumber) {
+  
   if (maxNumber < 2) {
     return 0;
   }
@@ -20,4 +21,5 @@ export default function countPrimeNumbers(maxNumber) {
   }
   
   return primeNumbers.length;
+
 }

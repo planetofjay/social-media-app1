@@ -12,6 +12,7 @@ export default function Playground() {
   }
 
   return (
+
     <>
       <h1>Playground</h1>
       <button onClick={handleUserNameChange}>Change User Name</button>
@@ -44,5 +45,7 @@ export default function Playground() {
         <CounterFunction userName={userName} />
       )}
     </>
+
   );
+  
 }

@@ -30,6 +30,7 @@ export default function Post({
     : 'promote-no';
 
   return (
+    
     <div className="post-component">
       <h3>{title}</h3>
 
@@ -69,6 +70,8 @@ export default function Post({
           <BiDislike /> {dislikes}
         </button>
       </div>
+
     </div>
+
   );
 } 
