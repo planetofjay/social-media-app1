@@ -9,12 +9,10 @@ export default function Settings() {
 
   const handleAllowLikesClick = () => {
     dispatch(toggleAllowLikes());
-    console.log('Allow likes');
   }
 
   const handleAllowDislikesClick = () => {
     dispatch(toggleAllowDislikes());
-    console.log('Allow dislikes');
   }
   
   return (

@@ -10,12 +10,12 @@ export const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    toggleAllowLikes: () => {
-      console.log('Redux: Allow likes');
+    toggleAllowLikes: (state) => {
+      state.allowLikes = !state.allowLikes;
     },
 
-    toggleAllowDislikes: () => {
-      console.log('Redux: Allow dislikes');
+    toggleAllowDislikes: (state) => {
+      state.allowDislikes = !state.allowDislikes;
     }
   }
 

@@ -1,6 +1,7 @@
 import { getCategory, getStatus } from "../../../includes/variables";
 import './styles.scss';
 import { BiLike, BiDislike } from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 export default function Post({ 
   id, 
@@ -15,6 +16,8 @@ export default function Post({
   onPostLike, 
   onPostDislike 
 }) {
+  const { allowLikes, allowDislikes } = useSelector((state) => state.settings);
+
   const handleLikeClick = () => {
     onPostLike(id);
     // Properties are read-only variables!
@@ -55,23 +58,29 @@ export default function Post({
       </div>
 
       <div className="rate">
-        <button 
-          title='I like this'
-          className='like'
-          onClick={handleLikeClick}
-        >
-          <BiLike /> {likes}
-        </button>
-        <button
-          title='I dislike this'
-          className="dislike"
-          onClick={handleDislikeClick}
-        >
-          <BiDislike /> {dislikes}
-        </button>
+        {allowLikes && (
+          <button 
+            title='I like this'
+            className='like'
+            onClick={handleLikeClick}
+          >
+            <BiLike /> {likes}
+          </button>
+        )}
+
+        {allowDislikes && (
+          <button
+            title='I dislike this'
+            className="dislike"
+            onClick={handleDislikeClick}
+          >
+            <BiDislike /> {dislikes}
+          </button>
+        )}
       </div>
 
     </div>
 
   );
+  
 } 
