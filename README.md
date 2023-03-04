@@ -3,7 +3,7 @@
 <img width="250" src="images/sms.png">
 <img width="250" src="images/sms2.png">
 <img width="250" src="images/sms3.png">
-<img width="650" src="images/structure.png">
+<img width="650" src="images/info.png">
 
 # Getting Started with Create React App
 
