@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  allowLikes: true,
+  allowDislikes: true
+};
+
 export const settingsSlice = createSlice({
 
   name: 'settings',
-  initialState: {
-    allowLikes: true,
-    allowDislikes: true
-  },
+  initialState,
   reducers: {
     toggleAllowLikes: () => {
       console.log('Redux: Allow likes');
