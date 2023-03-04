@@ -102,4 +102,17 @@
       }
     }
   }
+
+  .rate-single-button {
+    button {
+      &.like {
+        border-right: none;
+        border-radius: 20px;
+      }
+
+      &.dislike {
+        border-radius: 20px;
+      }
+    }
+  }
 }

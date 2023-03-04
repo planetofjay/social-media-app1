@@ -32,6 +32,11 @@ export default function Post({
     ? 'promote-yes' 
     : 'promote-no';
 
+  let rateClassName = 'rate';
+  if (!allowLikes || !allowDislikes) {
+    rateClassName += ' rate-single-button';
+  }
+
   return (
     
     <div className="post-component">
@@ -57,30 +62,32 @@ export default function Post({
         </div>
       </div>
 
-      <div className="rate">
-        {allowLikes && (
-          <button 
-            title='I like this'
-            className='like'
-            onClick={handleLikeClick}
-          >
-            <BiLike /> {likes}
-          </button>
-        )}
+      {(allowLikes || allowDislikes) && (
+        <div className={rateClassName}>
+          {allowLikes && (
+            <button 
+              title='I like this'
+              className='like'
+              onClick={handleLikeClick}
+            >
+              <BiLike /> {likes}
+            </button>
+          )}
 
-        {allowDislikes && (
-          <button
-            title='I dislike this'
-            className="dislike"
-            onClick={handleDislikeClick}
-          >
-            <BiDislike /> {dislikes}
-          </button>
-        )}
-      </div>
+          {allowDislikes && (
+            <button
+              title='I dislike this'
+              className="dislike"
+              onClick={handleDislikeClick}
+            >
+              <BiDislike /> {dislikes}
+            </button>
+          )}
+        </div>
+      )}
 
     </div>
 
   );
-  
+
 } 
