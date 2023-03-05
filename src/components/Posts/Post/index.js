@@ -1,7 +1,8 @@
 import { getCategory, getStatus } from "../../../includes/variables";
 import './styles.scss';
 import { BiLike, BiDislike } from "react-icons/bi";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { likePost, dislikePost } from "../../../redux/postSlice";
 
 export default function Post({ 
   id, 
@@ -15,16 +16,14 @@ export default function Post({
   dislikes, 
 }) {
   const { allowLikes, allowDislikes } = useSelector((state) => state.settings);
+  const dispatch = useDispatch();
 
   const handleLikeClick = () => {
-    // onPostLike(id);
-    // TODO: replace this
-    // Properties are read-only variables!
+    dispatch(likePost(id));
   }
 
   const handleDislikeClick = () => {
-    // onPostDislike(id);
-    // TODO: replace this
+    dispatch(dislikePost(id));
   }
   
   // Inline Styling _ using variables for Class Name
