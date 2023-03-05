@@ -15,6 +15,10 @@ nav.main {
     &:hover {
       background-color: rgba(255, 255, 255, 0.4);
     }
-  }
 
+    @include breakpoint-small {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
 }
