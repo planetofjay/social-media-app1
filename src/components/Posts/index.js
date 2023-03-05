@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 export default function Posts() {
 
   const posts = useSelector((state) => state.post.posts);
+  const { allowLikes, allowDislikes } = useSelector((state) => state.settings);
 
   // Sum up the total of likes and dislikes.
   let totalLikes = 0;
@@ -26,10 +27,21 @@ export default function Posts() {
         />
       ))}
 
-      <div className="total-rate">
-        Total Likes: {totalLikes} | 
-        Total Dislikes: {totalDislikes}
-      </div>
+      {(allowLikes || allowDislikes) && (
+        <div className="total-rate">
+          {allowLikes && (
+            <>Total Likes: {totalLikes}</>
+          )}
+
+          {allowLikes && allowDislikes && (
+            <> | </>
+          )}
+
+          {allowDislikes && (
+            <>Total Dislikes: {totalDislikes}</>
+          )}
+        </div>
+      )}
 
     </main>
 
