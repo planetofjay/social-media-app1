@@ -1,0 +1,20 @@
+@import "../../styles/variables.scss";
+
+nav.main {
+  display: flex;
+  justify-content: center;
+  background-color: $primary-color;
+
+  a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+}
