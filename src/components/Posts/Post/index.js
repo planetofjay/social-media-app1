@@ -13,18 +13,18 @@ export default function Post({
   picture,
   likes, 
   dislikes, 
-  onPostLike, 
-  onPostDislike 
 }) {
   const { allowLikes, allowDislikes } = useSelector((state) => state.settings);
 
   const handleLikeClick = () => {
-    onPostLike(id);
+    // onPostLike(id);
+    // TODO: replace this
     // Properties are read-only variables!
   }
 
   const handleDislikeClick = () => {
-    onPostDislike(id);
+    // onPostDislike(id);
+    // TODO: replace this
   }
   
   // Inline Styling _ using variables for Class Name

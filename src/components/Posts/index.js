@@ -1,7 +1,9 @@
 import Post from "./Post";
 import './styles.scss';
 
-export default function Posts({ posts, onPostLike, onPostDislike }) {
+export default function Posts() {
+
+  const posts = []; // TODO: replace this
 
   // Sum up the total of likes and dislikes.
   let totalLikes = 0;
@@ -20,8 +22,6 @@ export default function Posts({ posts, onPostLike, onPostDislike }) {
         <Post 
           key={index} 
           {...post}
-          onPostLike={onPostLike}
-          onPostDislike={onPostDislike}
         />
       ))}
 

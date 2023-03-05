@@ -42,7 +42,8 @@ export default function Form({ onAddPost }) {
     if (validate.length === 0) {
       
       // Valid data.
-      onAddPost(title, description, category, promote, status, picture);
+      // onAddPost(title, description, category, promote, status, picture);
+      // TODO: replace this
 
       // Display success message
       setShowSuccess(true);
