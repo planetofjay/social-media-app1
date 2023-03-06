@@ -8,7 +8,7 @@ export default function MainMenu() {
       <Link to='/'>Home</Link>
       <Link to='/posts'>Posts</Link>
       <Link to='/preferences'>Preferences</Link>
-      <Link to='/about-us'>About us</Link>
+      <Link to='/about-us'>About Us</Link>
     </nav>
 
   );

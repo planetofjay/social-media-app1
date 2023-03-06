@@ -1,4 +1,4 @@
-const appName = "Jay's App";
+const appName = "PlanetOfJay";
 
 /**
  * List of available categories.
