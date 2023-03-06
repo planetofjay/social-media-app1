@@ -1,11 +1,12 @@
 import PageContainer from "../../components/PageContainer";
+import Posts from "../../components/Posts";
 
 export default function PostListPage() {
 
   return (
 
     <PageContainer title='Posts'>
-      Post list and form go here.
+      <Posts showOnlyPromoted={false} />
     </PageContainer> 
 
   );
