@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { likePost, dislikePost } from "../../../redux/postSlice";
 
 export default function Post({ 
+
   id, 
   title, 
   description,
@@ -14,7 +15,9 @@ export default function Post({
   picture,
   likes, 
   dislikes, 
+
 }) {
+  
   const { allowLikes, allowDislikes } = useSelector((state) => state.settings);
   const dispatch = useDispatch();
 

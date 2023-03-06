@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import countPrimeNumbers from "../prime";
 
 export default function CounterFunction({ userName }) {
+  
   const [counter, setCounter] = useState(3);
   const [lastAction, setLastAction] = useState('none');
   // const [maxNumber, setMaxNumber] = useState(null);

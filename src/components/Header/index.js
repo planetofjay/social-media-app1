@@ -5,6 +5,7 @@ import './styles.scss';
 import MainMenu from '../MainMenu';
 
 export default function Header() {
+
   return (
     
     <>
@@ -15,4 +16,5 @@ export default function Header() {
       <MainMenu />
     </>
   );
+
 }

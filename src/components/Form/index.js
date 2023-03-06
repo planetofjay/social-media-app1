@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { addPost } from "../../redux/postSlice";
 
 export default function Form({ onAddPost }) {
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -194,5 +195,7 @@ export default function Form({ onAddPost }) {
 
       <button>Send</button>
     </form>
+
   );
+  
 }

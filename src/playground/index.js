@@ -3,6 +3,7 @@ import CounterFunction from "./CounterFunction";
 import { useState } from "react";
 
 export default function Playground() {
+  
   const [userName, setUserName] = useState('Mary');
   const [displayClassComp, setDisplayClassComp] = useState(false);
   const [displayFuncComp, setDisplayFuncComp] = useState(false);

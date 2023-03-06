@@ -1,6 +1,7 @@
 import React, { createRef } from "react";
 
 export default class CounterClass extends React.Component {
+  
   constructor() {
     super();
     this.state = {
