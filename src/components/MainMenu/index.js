@@ -1,13 +1,14 @@
 import './styles.scss';
+import { Link } from 'react-router-dom';
 
 export default function MainMenu() {
   return (
 
     <nav className='main'>
-      <a href='/'>Home</a>
-      <a href='/posts'>Posts</a>
-      <a href='/preferences'>Preferences</a>
-      <a href='/about-us'>About us</a>
+      <Link to='/'>Home</Link>
+      <Link to='/posts'>Posts</Link>
+      <Link to='/preferences'>Preferences</Link>
+      <Link to='/about-us'>About us</Link>
     </nav>
 
   );
