@@ -31,7 +31,7 @@ export default function Posts({ showOnlyPromoted }) {
         />
       ))}
 
-      {(allowLikes || allowDislikes) && (
+      {(allowLikes || allowDislikes) && !showOnlyPromoted && (
         <div className="total-rate">
           {allowLikes && (
             <>Total Likes: {totalLikes}</>

@@ -1,5 +1,6 @@
 import PageContainer from "../../components/PageContainer";
 import Posts from "../../components/Posts";
+import Form from "../../components/Form";
 
 export default function PostListPage() {
 
@@ -7,6 +8,7 @@ export default function PostListPage() {
 
     <PageContainer title='Posts'>
       <Posts showOnlyPromoted={false} />
+      <Form />
     </PageContainer> 
 
   );
