@@ -3,12 +3,11 @@
 <img width="300" src="images/post.png">
 <img width="300" src="images/comp1.png">
 <img width="300" src="images/comp2.png">
-<img width="650" src="images/info.png">
 
-# In progress (currently react router)
+# Application Structure (Currently)
 
-<img width="650" src="images/inProgress.png">
-<img width="650" src="images/inProgress2.png">
+<img width="650" src="images/current.png">
+<img width="650" src="images/current2.png">
 
 # Getting Started with Create React App
 
