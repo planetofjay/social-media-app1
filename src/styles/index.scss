@@ -30,11 +30,23 @@ h1 {
   margin: 2rem;
 }
 
+h2 {
+  font-size: 23px;
+  color: $secondary-color;
+  padding: 0;
+  margin: 3rem 0 0;
+}
+
 main.page {
   flex: 1;
 
   .container {
     margin: 2rem;
+  }
+
+  .full-width {
+    margin-left: -2rem;
+    margin-right: -2rem;
   }
 
   p {

@@ -1,14 +1,23 @@
 import PageContainer from "../../components/PageContainer";
 import Posts from "../../components/Posts";
-import Form from "../../components/Form";
+import './styles.scss';
 
 export default function PostListPage() {
+
+  const handleAddPostClick = () => {
+    alert('Redirect');
+  }
 
   return (
 
     <PageContainer title='Posts'>
       <Posts showOnlyPromoted={false} />
-      <Form />
+
+      <div className="add-post-button-container">
+        <button onClick={handleAddPostClick}>
+          Add Post
+        </button>
+      </div>
     </PageContainer> 
 
   );

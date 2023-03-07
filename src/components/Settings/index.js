@@ -18,7 +18,7 @@ export default function Settings() {
   return (
 
     <div className='settings-component'>
-      <h1>Settings</h1>
+      <h2>Settings</h2>
       
       <div className='field'>
         <label>
