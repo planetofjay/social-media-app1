@@ -1,11 +1,15 @@
 import PageContainer from "../../components/PageContainer";
 import Posts from "../../components/Posts";
 import './styles.scss';
+import { useNavigate } from "react-router-dom";
 
 export default function PostListPage() {
 
+  // This function variable that I can use anywhere, even callback function.
+  const navigate = useNavigate();
+
   const handleAddPostClick = () => {
-    alert('Redirect');
+    navigate('/posts/add');
   }
 
   return (
