@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Homepage from "./pages/HomePage";
 import PostListPage from "./pages/PostListPage";
+import PostItemPage from "./pages/PostItemPage";
 import PostFormPage from "./pages/PostFormPage";
 import PreferencesPage from "./pages/PreferencesPage";
 import AboutUsPage from "./pages/AboutUsPage";
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/" element={<Homepage />} />
 
         <Route path="/posts" element={<PostListPage />} />
+        <Route path="/posts/:id" element={<PostItemPage />} />
         <Route path="/posts/add" element={<PostFormPage />} />
 
         <Route path="/preferences" element={<PreferencesPage />} />
