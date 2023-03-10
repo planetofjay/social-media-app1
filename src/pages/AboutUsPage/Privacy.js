@@ -1,4 +1,4 @@
-export default function AboutUsPrivacyPage() {
+export default function AboutUsPagePrivacy() {
 
   return (
 

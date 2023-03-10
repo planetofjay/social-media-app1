@@ -1,4 +1,4 @@
-export default function AboutUsMissionPage() {
+export default function AboutUsPageMission() {
 
   return (
 
