@@ -6,6 +6,7 @@ import PostItemPage from "./pages/PostItemPage";
 import PostFormPage from "./pages/PostFormPage";
 import PreferencesPage from "./pages/PreferencesPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import AboutUsPageIntroduction from "./pages/AboutUsPage/Introduction";
 import AboutUsPageMission from "./pages/AboutUsPage/Mission";
 import AboutUsPagePrivacy from "./pages/AboutUsPage/Privacy";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/preferences" element={<PreferencesPage />} />
         
         <Route path="/about-us" element={<AboutUsPage />}>
+          <Route path="" element={<AboutUsPageIntroduction />} />
           <Route path="mission" element={<AboutUsPageMission />} />
           <Route path="privacy" element={<AboutUsPagePrivacy />} />
         </Route>
