@@ -17,11 +17,11 @@ main.page {
       font-size: 18px;
       padding: 1rem 2rem;
       cursor: pointer;
-      box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+      box-shadow: 4px 4px 6px rgba(135, 173, 250, 0.25);
       border-radius: 30px;
 
       &:hover {
-        background-color: $success-color;
+        background-color: #6f6fcd;
       }
     }
   }

@@ -1,5 +1,5 @@
 import PageContainer from "../../components/PageContainer";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import NotFoundPage from "../NotFoundPage";
 
@@ -16,8 +16,16 @@ export default function PostItemPage() {
   
   return (
 
-    <PageContainer title={post.title}>
-      Id: {params.id}
+    <PageContainer title={post.title} className='post-item-page'>
+      <div className='picture'>
+        <img src={post.picture} alt={post.title} />
+      </div>
+
+      <div className='description'>
+        {post.description}
+      </div>
+
+      <Link to='/posts' className='back-link'>Back</Link>
     </PageContainer>
 
   );

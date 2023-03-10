@@ -2,8 +2,8 @@
 $title-font: 'Lobster', cursive;
 $body-font: 'Roboto', sans-serif;
 
-$primary-color: #008080;
-$secondary-color: #64646E;
+$primary-color: #4c4c85;
+$secondary-color: #565661;
 $text-color: #34343a;
 $gray-color: #9e9ea4;
 $background-color: #e1e1e9;
@@ -28,5 +28,3 @@ $danger-color: #cd2424;
     @content;
   }
 }
-
-// You can create xs, xl or xxl mixin if you want
