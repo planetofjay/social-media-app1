@@ -5,7 +5,7 @@ export default function Footer() {
   return (
 
     <footer className="main">
-      Copyright &copy; Jay L.
+      &copy;2023 Jay Lee. all rights reserved
     </footer>
     
   );

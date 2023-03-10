@@ -2,6 +2,7 @@ import PageContainer from "../../components/PageContainer";
 import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import NotFoundPage from "../NotFoundPage";
+import './styles.scss';
 
 export default function PostItemPage() {
 

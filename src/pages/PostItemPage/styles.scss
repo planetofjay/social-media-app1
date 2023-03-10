@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+main.page {
+  .post-item-page {
+    .picture {
+      margin-bottom: 2rem;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .description {
+      margin-bottom: 2rem;
+      color: $secondary-color;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .back-link {
+      color: $secondary-color;
+      text-decoration: none;
+      font-size: 1.2rem;
+      line-height: 2rem;
+
+      &::before {
+        content: '<';
+        font-size: 1.4rem;
+        color: $primary-color;
+        margin-right: 0.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

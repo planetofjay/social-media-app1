@@ -1,10 +1,10 @@
-export default function PageContainer({ title, children }) {
+export default function PageContainer({ title, children, className }) {
 
   return (
 
-    <main className="page">
+    <main className='page'>
       <h1>{title}</h1>
-      <div className="container">
+      <div className={'container ' + (className || '')}>
         {children}
       </div>
     </main>
