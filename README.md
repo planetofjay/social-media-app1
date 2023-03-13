@@ -1,6 +1,9 @@
-# Post your stuffs!
+# Post your day!
 
 <img width="300" src="images/posts.png">
+
+# Components
+
 <img width="300" src="images/comp1.png">
 <img width="300" src="images/comp2.png">
 
