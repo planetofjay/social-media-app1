@@ -1,6 +1,6 @@
 # Post your stuffs!
 
-<img width="300" src="images/post.png">
+<img width="300" src="images/posts.png">
 <img width="300" src="images/comp1.png">
 <img width="300" src="images/comp2.png">
 
