@@ -1,16 +1,21 @@
-# Post your day!
+# Project - Social Media App
 
 <img width="300" src="images/posts.png">
 
+## Table of contents
+
+- [Components](#components)
+- [Structure](#structure-currently)
+
 # Components
 
-<img width="300" src="images/comp1.png">
-<img width="300" src="images/comp2.png">
+![](/images/comp1.png)
+![](/images/comp2.png)
 
-# Application Structure (Currently)
+# Structure (Currently)
 
-<img width="650" src="images/current.png">
-<img width="650" src="images/current2.png">
+![](/images/current.png)
+![](/images/current2.png)
 
 # Getting Started with Create React App
 
