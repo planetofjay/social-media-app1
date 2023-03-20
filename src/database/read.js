@@ -17,6 +17,7 @@ export async function load() {
     return data;
   }
   catch(error) {
+    // eslint-disable-next-line
     throw 'Failed to load the database.';
   }
 
