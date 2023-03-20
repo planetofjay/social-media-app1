@@ -11,10 +11,16 @@ export default function Posts({ showOnlyPromoted }) {
     posts = posts.filter((post) => post.promote);
   }
 
+  // Validate if there are posts to display
+  if(posts.length === 0) {
+    return (
+      <div>No post found.</div>
+    );
+  }
+
   // Sum up the total of likes and dislikes.
   let totalLikes = 0;
   let totalDislikes = 0;
-
   posts.forEach((post) => {
     totalLikes += post.likes;
     totalDislikes += post.dislikes;
