@@ -19,6 +19,8 @@ import * as database from "./database";
 import { setPosts } from "./redux/postSlice";
 import { useDispatch } from "react-redux";
 
+import Loading from "./components/Loading";
+
 export default function App() {
 
   const dispatch = useDispatch();
@@ -32,6 +34,7 @@ export default function App() {
       // Load the database.
       const data = await database.load();
       dispatch(setPosts(data));
+      setIsLoading(false);
     })();
 
   }, []);
@@ -42,7 +45,7 @@ export default function App() {
 
       {isLoading
         ? (
-          <div>Loading...</div>
+          <Loading />
         )
         : (
           <Routes>
