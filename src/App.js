@@ -32,7 +32,7 @@ export default function App() {
     (async () => {
 
       // Load the database.
-      const data = await database.load();
+      const data = await database.loadPromoted();
       dispatch(setPosts(data));
       setIsLoading(false);
     })();
