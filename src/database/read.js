@@ -17,7 +17,7 @@ export function load() {
         };
         data.push(post);
       });
-      console.log('Data:', data);
+      // console.log('Data:', data);
     })
     .catch((error) => {
       console.log('Error:', error);
@@ -28,7 +28,11 @@ export function load() {
   //   console.log(`${doc.id} => ${doc.data()}`);
   // });
 
-  return data;
+  // return data;
+  return new Promise((resolve, reject) => {
+    resolve('ok');
+    reject('It failed!');
+  });
 
 }
 
