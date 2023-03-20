@@ -28,6 +28,8 @@ export function load() {
   //   console.log(`${doc.id} => ${doc.data()}`);
   // });
 
+  return data;
+
 }
 
 export function loadById(id) {

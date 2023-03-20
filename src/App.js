@@ -21,7 +21,8 @@ export default function App() {
   useEffect(() => {
 
     // Load the database.
-    database.load();
+    const result = database.load();
+    console.log('Loaded data:', result);
 
   }, []);
 
