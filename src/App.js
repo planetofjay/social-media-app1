@@ -12,8 +12,19 @@ import AboutUsPagePrivacy from "./pages/AboutUsPage/Privacy";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+
+import { load, save } from "./database";
 
 export default function App() {
+
+  useEffect(() => {
+
+    // Load the database.
+    load();
+    save();
+
+  }, []);
 
   return (
     <>
