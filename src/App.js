@@ -14,19 +14,14 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
-// import { load, save } from "./database";
-// import { load } from "./database/read";
-// import { save, update } from "./database/write";
-import { load, save, update } from "./database";
+import * as database from "./database";
 
 export default function App() {
 
   useEffect(() => {
 
     // Load the database.
-    load();
-    save();
-    update();
+    database.load();
 
   }, []);
 

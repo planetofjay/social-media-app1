@@ -1,6 +1,6 @@
 export function load() {
 
-  console.log('Loading');
+  console.log('Loading...');
 
 }
 
