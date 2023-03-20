@@ -14,7 +14,10 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 
-import { load, save } from "./database";
+// import { load, save } from "./database";
+// import { load } from "./database/read";
+// import { save, update } from "./database/write";
+import { load, save, update } from "./database";
 
 export default function App() {
 
@@ -23,6 +26,7 @@ export default function App() {
     // Load the database.
     load();
     save();
+    update();
 
   }, []);
 
@@ -39,7 +43,7 @@ export default function App() {
 
         <Route path="/preferences" element={<PreferencesPage />} />
         
-        <Route path="/about-us" element={<AboutUsPage />}>
+        <Route path="/about-us" element={<AboutUsPage />} >
           <Route path="" element={<AboutUsPageIntroduction />} />
           <Route path="mission" element={<AboutUsPageMission />} />
           <Route path="privacy" element={<AboutUsPagePrivacy />} />
