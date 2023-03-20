@@ -5,10 +5,19 @@ export function load() {
 
   console.log('Loading...');
 
+  const data = [];
+
   const dbCollection = collection(db, "posts");
   getDocs(dbCollection)
     .then((querySnapshot) => {
-      console.log('Query Snapshot:', querySnapshot);
+      querySnapshot.forEach((doc) => {
+        const post = {
+          ...doc.data(),
+          id: doc.id
+        };
+        data.push(post);
+      });
+      console.log('Data:', data);
     })
     .catch((error) => {
       console.log('Error:', error);
