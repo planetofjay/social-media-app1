@@ -20,17 +20,12 @@ export default function App() {
 
   useEffect(() => {
 
-    // Load the database.
-    // const result = database.load();
-    // console.log('Loaded data:', result);
-
-    database.load()
-      .then((result) => {
-        console.log('Load Result:', result);
-      })
-      .catch((error) => {
-        console.log('Load Error:', error);
-      });
+    // IIFE - Immediately Invoked Function Expression
+    (async () => {
+      // Load the database.
+      const data = await database.load();
+      console.log('Loaded data:', data);
+    })();
 
   }, []);
 
