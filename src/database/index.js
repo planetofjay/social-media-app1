@@ -1,2 +1,2 @@
 export { load, loadById, loadPromoted } from './read';
-export { save, update } from './write';
+export { save, update, remove } from './write';

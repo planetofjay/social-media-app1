@@ -2,24 +2,24 @@ import { getCategory, getStatus } from "../../../includes/variables";
 import './styles.scss';
 import { BiLike, BiDislike } from "react-icons/bi";
 import { useSelector, useDispatch } from "react-redux";
-import { likePost, dislikePost } from "../../../redux/postSlice";
+import { likePost, dislikePost, removePost } from "../../../redux/postSlice";
 import { Link } from "react-router-dom";
 import * as database from "../../../database";
 
-export default function Post({ 
+export default function Post({
 
-  id, 
-  title, 
+  id,
+  title,
   description,
   category,
   promote,
   status,
   picture,
-  likes, 
-  dislikes, 
+  likes,
+  dislikes,
 
 }) {
-  
+
   const { allowLikes, allowDislikes } = useSelector((state) => state.settings);
   const dispatch = useDispatch();
 
@@ -28,22 +28,44 @@ export default function Post({
     dispatch(likePost(id));
 
     const data = { likes: likes + 1 };
-    const updated = await database.update('fake', data);
+    const updated = await database.update(id, data);
     console.log('Updated:', updated);
     if (!updated) {
       alert('Failed to update likes.');
       // TODO: Improve the message to the user.
+      // TODO: Create a Redux action to remove one like.
     }
   }
 
-  const handleDislikeClick = (event) => {
+  const handleDislikeClick = async (event) => {
     event.preventDefault();
     dispatch(dislikePost(id));
+
+    const data = { dislikes: dislikes + 1 };
+    const updated = await database.update(id, data);
+    if (!updated) {
+      alert('Failed to update dislikes.');
+      // TODO: Improve this.
+    }
   }
-  
+
+  const handleRemoveClick = async (event) => {
+    event.preventDefault();
+
+    // Remove from Redux store.
+    dispatch(removePost(id));
+
+    // Remove from Database.
+    const removed = await database.remove(id);
+    if (!removed) {
+      alert('Failed to remove post.');
+      // TODO: Improve this.
+    }
+  }
+
   // Inline Styling _ using variables for Class Name
-  const promoteStyle = promote 
-    ? 'promote-yes' 
+  const promoteStyle = promote
+    ? 'promote-yes'
     : 'promote-no';
 
   let rateClassName = 'rate';
@@ -52,7 +74,7 @@ export default function Post({
   }
 
   return (
-    
+
     <Link to={'/posts/' + id} className="post-component">
       <h3>{title}</h3>
 
@@ -79,7 +101,7 @@ export default function Post({
       {(allowLikes || allowDislikes) && (
         <div className={rateClassName}>
           {allowLikes && (
-            <button 
+            <button
               title='I like this'
               className='like'
               onClick={handleLikeClick}
@@ -100,6 +122,7 @@ export default function Post({
         </div>
       )}
 
+      <button onClick={handleRemoveClick}>Remove</button>
     </Link>
 
   );
