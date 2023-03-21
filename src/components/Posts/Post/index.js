@@ -4,6 +4,7 @@ import { BiLike, BiDislike } from "react-icons/bi";
 import { useSelector, useDispatch } from "react-redux";
 import { likePost, dislikePost } from "../../../redux/postSlice";
 import { Link } from "react-router-dom";
+import * as database from "../../../database";
 
 export default function Post({ 
 
@@ -22,9 +23,16 @@ export default function Post({
   const { allowLikes, allowDislikes } = useSelector((state) => state.settings);
   const dispatch = useDispatch();
 
-  const handleLikeClick = (event) => {
+  const handleLikeClick = async (event) => {
     event.preventDefault();
     dispatch(likePost(id));
+
+    const data = { likes: likes + 1 };
+    const updated = await database.update('fake', data);
+    console.log('Updated:', updated);
+    if (!updated) {
+      alert('Failed to update likes.');
+    }
   }
 
   const handleDislikeClick = (event) => {
