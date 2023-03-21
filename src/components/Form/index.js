@@ -3,8 +3,9 @@ import { categories, statuses } from "../../includes/variables";
 import './styles.scss';
 import { useDispatch } from "react-redux";
 import { addPost } from "../../redux/postSlice";
+import * as database from "../../database";
 
-export default function Form({ onAddPost }) {
+export default function Form() {
 
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -14,11 +15,12 @@ export default function Form({ onAddPost }) {
   const [picture, setPicture] = useState('');
   const [errorMessages, setErrorMessages] = useState([]);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   const dispatch = useDispatch();
   const inputFile = useRef();
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     // Hide success message
@@ -31,10 +33,10 @@ export default function Form({ onAddPost }) {
     }
     if (description === '') {
       validate.push('The description is required.');
-    }    
+    }
     if (category === '') {
       validate.push('Please, select a category.');
-    }    
+    }
     if (status === '') {
       validate.push('Please, select a status.');
     }
@@ -44,23 +46,45 @@ export default function Form({ onAddPost }) {
 
     setErrorMessages(validate);
     if (validate.length === 0) {
-      
+      setIsSaving(true);
+
       // Valid data.
       // json object for addPost action
-      const data = { title, description, category, promote, status, picture };
-      dispatch(addPost(data));
+      const data = {
+        title,
+        description,
+        category,
+        promote,
+        status,
+        picture,
+        likes: 0,
+        dislikes: 0
+      };
+      const savedId = await database.save(data);
+      if (savedId) {
+        data.id = savedId;
+        dispatch(addPost(data));
 
-      // Display success message
-      setShowSuccess(true);
+        // Display success message
+        setShowSuccess(true);
 
-      // Clear the form
-      setTitle('');
-      setDescription('');
-      setCategory('');
-      setPromote(true);
-      setStatus('');
-      setPicture('');
-      inputFile.current.value = '';
+        // Clear the form
+        setTitle('');
+        setDescription('');
+        setCategory('');
+        setPromote(true);
+        setStatus('');
+        setPicture('');
+        if (inputFile.current) {
+          inputFile.current.value = '';
+        }
+      }
+      else {
+        setErrorMessages(['Failed to save data.']);
+      }
+
+      // Hide the saving message.
+      setIsSaving(false);
     }
   }
 
@@ -71,6 +95,12 @@ export default function Form({ onAddPost }) {
     fileReader.onload = (event) => {
       setPicture(event.target.result);
     }
+  }
+
+  if (isSaving) {
+    return (
+      <div>Saving...</div>
+    );
   }
 
   return (
@@ -100,8 +130,8 @@ export default function Form({ onAddPost }) {
       <div>
         <label>
           Title:
-          <input 
-            type='text' 
+          <input
+            type='text'
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             maxLength={50}
@@ -115,7 +145,7 @@ export default function Form({ onAddPost }) {
       <div>
         <label>
           Description:
-          <textarea 
+          <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder='Describe your post'
@@ -131,7 +161,7 @@ export default function Form({ onAddPost }) {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-          > 
+          >
             <option value=''>- Select -</option>
             {categories.map((item) => (
               <option key={item.id} value={item.id}>
@@ -141,12 +171,12 @@ export default function Form({ onAddPost }) {
           </select>
         </label>
       </div>
-      
+
       {/* Promote Field */}
       <div className="promote-field">
         <label>
-          <input 
-            type='checkbox' 
+          <input
+            type='checkbox'
             checked={promote}
             onChange={(e) => setPromote(e.target.checked)}
           />
@@ -159,8 +189,8 @@ export default function Form({ onAddPost }) {
         Status:
         {statuses.map((item) => (
           <label key={item.id}>
-            <input 
-              type='radio' 
+            <input
+              type='radio'
               value={item.id}
               checked={status === item.id}
               onChange={(e) => setStatus(e.target.value)}
@@ -175,21 +205,21 @@ export default function Form({ onAddPost }) {
         <legend>Picture:</legend>
         <label>
           Select an image:
-          <input 
+          <input
             type='file'
             accept='image/*'
             onChange={handlePictureSelection}
             ref={inputFile}
-          />  
+          />
         </label>
 
         {/* Conditionally preview the image */}
         {picture !== '' && (
-          <img 
-            src={picture} 
+          <img
+            src={picture}
             alt='Preview'
             width={100}
-          />            
+          />
         )}
       </fieldset>
 
@@ -197,5 +227,5 @@ export default function Form({ onAddPost }) {
     </form>
 
   );
-  
+
 }
