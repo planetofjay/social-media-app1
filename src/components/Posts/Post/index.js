@@ -32,6 +32,7 @@ export default function Post({
     console.log('Updated:', updated);
     if (!updated) {
       alert('Failed to update likes.');
+      // TODO: Improve the message to the user.
     }
   }
 
