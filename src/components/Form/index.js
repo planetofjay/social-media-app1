@@ -50,41 +50,46 @@ export default function Form() {
 
       // Upload the picture.
       const file = inputFile.current.files[0];
-      database.uploadPicture(file);
+      const pictureUrl = await database.uploadPicture(file);
+      if (pictureUrl) {
 
-      // Valid data.
-      // json object for addPost action
-      const data = {
-        title,
-        description,
-        category,
-        promote,
-        status,
-        picture,
-        likes: 0,
-        dislikes: 0
-      };
-      const savedId = await database.save(data);
-      if (savedId) {
-        data.id = savedId;
-        dispatch(addPost(data));
+        // Valid data.
+        // json object for addPost action
+        const data = {
+          title,
+          description,
+          category,
+          promote,
+          status,
+          picture: pictureUrl,
+          likes: 0,
+          dislikes: 0
+        };
+        const savedId = await database.save(data);
+        if (savedId) {
+          data.id = savedId;
+          dispatch(addPost(data));
 
-        // Display success message
-        setShowSuccess(true);
+          // Display success message
+          setShowSuccess(true);
 
-        // Clear the form
-        setTitle('');
-        setDescription('');
-        setCategory('');
-        setPromote(true);
-        setStatus('');
-        setPicture('');
-        if (inputFile.current) {
-          inputFile.current.value = '';
+          // Clear the form
+          setTitle('');
+          setDescription('');
+          setCategory('');
+          setPromote(true);
+          setStatus('');
+          setPicture('');
+          if (inputFile.current) {
+            inputFile.current.value = '';
+          }
+        }
+        else {
+          setErrorMessages(['Failed to save data.']);
         }
       }
       else {
-        setErrorMessages(['Failed to save data.']);
+        setErrorMessages(['Failed to upload the picture.']);
       }
 
       // Hide the saving message.

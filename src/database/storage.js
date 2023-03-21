@@ -1,4 +1,4 @@
-import { getStorage, ref, uploadBytes } from "firebase/storage";
+import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 import { app } from "./config";
 import uuid from "react-uuid";
 
@@ -6,11 +6,13 @@ import uuid from "react-uuid";
 const storage = getStorage(app);
 
 export async function uploadPicture(file) {
-  console.log('File:', file);
-
-  const storageRef = ref(storage, uuid() + '--' + file.name);
-
-  // 'file' comes from the Blob or File API
-  const snapshot = await uploadBytes(storageRef, file);
-  console.log('Snapshot:', snapshot);
+  try {
+    const storageRef = ref(storage, uuid() + '--' + file.name);
+    const snapshot = await uploadBytes(storageRef, file);
+    const url = await getDownloadURL(snapshot.ref);
+    return url;  
+  }
+  catch {
+    return null;
+  }
 }
