@@ -1,14 +1,16 @@
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { app } from "./config";
+import uuid from "react-uuid";
 
 // Initialize Cloud Storage and get a reference to the service
 const storage = getStorage(app);
 
-function uploadPicture() {
-  const storageRef = ref(storage, 'some-child');
+export async function uploadPicture(file) {
+  console.log('File:', file);
+
+  const storageRef = ref(storage, uuid() + '--' + file.name);
 
   // 'file' comes from the Blob or File API
-  uploadBytes(storageRef, file).then((snapshot) => {
-    console.log('Uploaded a blob or file!');
-  });
+  const snapshot = await uploadBytes(storageRef, file);
+  console.log('Snapshot:', snapshot);
 }

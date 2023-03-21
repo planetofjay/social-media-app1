@@ -26,7 +26,6 @@ export const postSlice = createSlice({
     },
 
     addPost: (state, action) => {
-      console.log('Action:', action);
       state.posts.push(action.payload);
     },
 

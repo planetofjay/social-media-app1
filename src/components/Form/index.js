@@ -48,6 +48,10 @@ export default function Form() {
     if (validate.length === 0) {
       setIsSaving(true);
 
+      // Upload the picture.
+      const file = inputFile.current.files[0];
+      database.uploadPicture(file);
+
       // Valid data.
       // json object for addPost action
       const data = {
