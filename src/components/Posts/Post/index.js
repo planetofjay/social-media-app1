@@ -122,7 +122,12 @@ export default function Post({
         </div>
       )}
 
-      <button onClick={handleRemoveClick}>Remove</button>
+      <button 
+        className='remove'
+        onClick={handleRemoveClick}
+      >
+        Remove
+      </button>
     </Link>
 
   );

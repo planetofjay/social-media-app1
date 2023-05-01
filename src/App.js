@@ -36,7 +36,8 @@ export default function App() {
       dispatch(setPosts(data));
       setIsLoading(false);
     })();
-
+    
+  // eslint-disable-next-line
   }, []);
 
   return (

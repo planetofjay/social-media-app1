@@ -20,6 +20,8 @@ export default function PostItemPage() {
       setPost(loadedPost);
       setIsLoading(false);
     })();
+
+    // eslint-disable-next-line
   }, []);
   
   if(isLoading) {
