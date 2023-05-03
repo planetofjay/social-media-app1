@@ -1,21 +1,9 @@
 # Project - Social Media App
 
-<img width="300" src="images/posts.png">
-
-## Table of contents
-
-- [Components](#components)
-- [Structure](#structure-currently)
-
-# Components
-
-![](/images/comp1.png)
-![](/images/comp2.png)
-
-# Structure (Currently)
-
-![](/images/current.png)
-![](/images/current2.png)
+<img width="90%" src="images/home.png">
+<img width="90%" src="images/posts.png">
+<img width="90%" src="images/preferences.png">
+<img width="90%" src="images/about-us.png">
 
 # Getting Started with Create React App
 
