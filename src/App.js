@@ -51,6 +51,7 @@ export default function App() {
         : (
           <Routes>
             <Route path="/" element={<Homepage />} />
+            <Route path="/social-media-app1" element={<Homepage />} />
 
             <Route path="/posts" element={<PostListPage />} />
             <Route path="/posts/:id" element={<PostItemPage />} />
