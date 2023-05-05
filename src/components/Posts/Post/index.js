@@ -20,7 +20,7 @@ export default function Post({
 
 }) {
 
-  const { allowLikes, allowDislikes } = useSelector((state) => state.settings);
+  const { allowLikes, allowDislikes, allowRemove } = useSelector((state) => state.settings);
   const dispatch = useDispatch();
 
   const handleLikeClick = async (event) => {
@@ -122,12 +122,19 @@ export default function Post({
         </div>
       )}
 
-      <button 
-        className='remove'
-        onClick={handleRemoveClick}
-      >
-        Remove
-      </button>
+      {(allowRemove) && (
+        <div>
+          {allowRemove && (
+            <button
+              title='I want to remove this'
+              className='remove'
+              onClick={handleRemoveClick}
+            >
+              Remove
+            </button>
+          )}
+        </div>
+      )}
     </Link>
 
   );

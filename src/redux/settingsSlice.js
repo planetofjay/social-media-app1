@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  allowLikes: true,
-  allowDislikes: true
+  allowLikes: false,
+  allowDislikes: false,
+  allowRemove: false,
 };
 
 export const settingsSlice = createSlice({
@@ -16,10 +17,14 @@ export const settingsSlice = createSlice({
 
     toggleAllowDislikes: (state) => {
       state.allowDislikes = !state.allowDislikes;
-    }
+    },
+
+    toggleAllowRemove: (state) => {
+      state.allowRemove = !state.allowRemove;
+    },
   }
 
 });
 
-export const { toggleAllowLikes, toggleAllowDislikes } = settingsSlice.actions;
+export const { toggleAllowLikes, toggleAllowDislikes, toggleAllowRemove } = settingsSlice.actions;
 export default settingsSlice.reducer;

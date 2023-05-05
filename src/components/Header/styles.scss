@@ -26,7 +26,7 @@ header.main {
     font-family: $title-font;
     font-size: 30px;
     font-weight: normal;
-    color: $secondary-color;
+    color: $title-color;
 
     @include breakpoint-small {
       font-size: 36px;
