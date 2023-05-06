@@ -2,23 +2,28 @@
 
 nav.main {
   display: flex;
-  justify-content: center;
-  background-color: $primary-color;
-
+  justify-content: space-between;
+  margin: 2rem;
+  border-radius: 20px;
+  
+  
   a {
-    display: block;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.9rem;
-    color: #fff;
+    color: $text-color;
     text-decoration: none;
+    text-align: center;
+    width: 100%;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.1);
+      border-radius: 20px;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(56, 58, 69, 0.4);
     }
 
     &.active {
-      background-color: #fff;
-      color: $primary-color;
+      color: #fff;
+      border-radius: 20px;
+      box-shadow: 4px 4px 6px 4px rgba(135, 173, 250, 0.25);
     }
 
     @include breakpoint-small {

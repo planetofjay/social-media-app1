@@ -2,37 +2,40 @@
 @import './variables.scss';
 
 body {
+  background-image: url('./../../images/image.jpeg');
+  background-attachment: fixed;
   margin: 0;
   font-family: $body-font;
-  font-size: 16px;
   color: $text-color;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
-  height: 100%;
+  height: 100%; 
 }
 
 #root {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: rgba(255, 255, 255, 0);  
+  backdrop-filter: blur(5px);
 }
 
 h1 {
   font-family: $title-font;
   font-size: 37px;
   font-weight: normal;
-  color: $primary-color;
+  color: $title-color;
   padding: 0;
   margin: 2rem;
 }
 
 h2 {
   font-size: 23px;
-  color: $secondary-color;
   padding: 0;
   margin: 3rem 0 0;
 }
@@ -50,7 +53,7 @@ main.page {
   }
 
   p {
-    color: $secondary-color;
+    color: $text-color;
     font-size: 1rem;
     line-height: 1.5rem;
   }

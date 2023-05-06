@@ -69,6 +69,8 @@ export default function Post({
     : 'promote-no';
 
   let rateClassName = 'rate';
+
+  let removeClassName = 'remove'
   if (!allowLikes || !allowDislikes) {
     rateClassName += ' rate-single-button';
   }
@@ -123,11 +125,11 @@ export default function Post({
       )}
 
       {(allowRemove) && (
-        <div>
+        <div className={removeClassName}>
           {allowRemove && (
             <button
               title='I want to remove this'
-              className='remove'
+              className='delete'
               onClick={handleRemoveClick}
             >
               Remove

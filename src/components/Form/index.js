@@ -210,11 +210,11 @@ export default function Form() {
       </div>
 
       {/* Picture Field */}
-      <fieldset>
+      <fieldset className="picture-field">
         <legend>Picture:</legend>
-        <label>
+        <label className="select-field">
           Select an image:
-          <input
+          <input className
             type='file'
             accept='image/*'
             onChange={handlePictureSelection}

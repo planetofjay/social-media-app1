@@ -2,7 +2,6 @@
 
 .post-list {
   padding: 2rem;
-  background-color: $background-color;
   display: flex;
   flex-wrap: wrap;
 
@@ -14,6 +13,6 @@
     text-align: center;
     font-size: 1.2rem;
     width: 100%;
-    color: $secondary-color;
+    color: $text-color;
   }
 }

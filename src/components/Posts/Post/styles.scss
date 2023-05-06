@@ -1,14 +1,22 @@
 @import './../../../styles/variables.scss';
 
 .post-component {
-  border: solid 1px $border-color;
   border-radius: 20px;
-  background-color: white;
   padding: 1rem;
   margin-bottom: 2rem;
   width: 100%;
   box-sizing: border-box;
   text-decoration: none;
+
+  &:hover {
+    transform: scale(1.0);
+    border-radius: 20px;
+    box-shadow: 4px 4px 6px 4px rgba(135, 173, 250, 0.25);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(56, 58, 69, 0.4);
+  }
+
+
 
   @include breakpoint-small {
     width: calc(50% - 2rem);
@@ -38,7 +46,7 @@
     }
 
     span {
-      color: $secondary-color;
+      color: $text-color;
       line-height: 1.4rem;
     }
   }
@@ -49,12 +57,12 @@
 
     div {
       font-size: 0.8rem;
-      color: $gray-color;
+      color: $text-color;
       margin: 1.5rem 1.5rem 0 0;
 
       strong {
         display: block;
-        color: $secondary-color;
+        color: $text-color;
         font-size: 1rem;
       }
 
@@ -76,29 +84,42 @@
     button {
       border: none;
       font-size: 1rem;
-      color: $secondary-color;
       display: flex;
       align-items: center;
       padding: 7px 15px;
       cursor: pointer;
+      color: $text-color;
 
       svg {
         margin-right: 0.5rem;
         font-size: 1.5rem;
-      } 
+      }
 
       &.like {
+        background-color: rgba(69, 69, 69, 0.492);
         border-radius: 20px 0 0 20px;
-        border-right: solid 1px $border-color;
-  
+
+        &:hover {
+          background-color: rgb(0, 0, 0);
+          background-color: rgba(61, 61, 61, 0.4);
+          box-shadow: 4px 4px 6px rgba(135, 173, 250, 0.25);
+        }
+
         svg {
           color: $success-color;
         }
       }
-  
+
       &.dislike {
-        border-radius: 0 20px 20px 0;
-  
+        background-color: rgba(69, 69, 69, 0.492);
+        border-radius: 0px 20px 20px 0;
+
+        &:hover {
+          background-color: rgb(0, 0, 0);
+          background-color: rgba(61, 61, 61, 0.4);
+          box-shadow: 4px 4px 6px rgba(135, 173, 250, 0.25);
+        }
+
         svg {
           color: $danger-color;
         }
@@ -120,10 +141,25 @@
   }
 
   .remove {
-    border: none;
-    border-radius: 20px;
-    padding: 7px 15px;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: right;
+
+    .delete {
+      color: $text-color;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 20px;
+      padding: 7px 15px;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      background-color: rgba(69, 69, 69, 0.492);
+
+      &:hover {
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(61, 61, 61, 0.4);
+        box-shadow: 4px 4px 6px rgba(135, 173, 250, 0.25);
+      }
+    }
   }
 }

@@ -8,20 +8,21 @@ main.page {
     // user-friendly
     position: sticky;
     bottom: 0;
-  
 
     button {
+      color: $text-color;
       border: none;
-      background-color: $primary-color;
-      color: #fff;
-      font-size: 18px;
+      font-size: 15px;
       padding: 1rem 2rem;
       cursor: pointer;
       box-shadow: 4px 4px 6px rgba(135, 173, 250, 0.25);
       border-radius: 30px;
+      background-color: rgba(69, 69, 69, 0.492);
 
       &:hover {
-        background-color: #6f6fcd;
+        transform: scale(1.1);
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(61, 61, 61, 0.4);
       }
     }
   }
