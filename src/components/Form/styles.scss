@@ -89,8 +89,8 @@
   }
 
   .form-validate {
-    color: $danger-color;
-    border: solid 1px $danger-color;
+    color: $title-color;
+    border: solid 1px $title-color;
     border-left-width: 7px;
     padding: 1rem;
     margin-bottom: 2rem;
@@ -113,8 +113,8 @@
   }
 
   .success-message {
-    color: $success-color;
-    border: solid 1px $success-color;
+    color: $title-color;
+    border: solid 1px $title-color;
     border-left-width: 7px;
     padding: 1rem;
     margin-bottom: 2rem;

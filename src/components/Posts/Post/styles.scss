@@ -61,11 +61,11 @@
       }
 
       &.promote-yes strong {
-        color: $success-color;
+        color: $title-color;
       }
 
       &.promote-no strong {
-        color: $danger-color;
+        color: $title-color;
       }
     }
   }
@@ -90,7 +90,7 @@
       }
 
       &.like {
-        background-color: rgba(69, 69, 69, 0.492);
+        background-color: $background-color;
         border-radius: 20px 0 0 20px;
 
         &:hover {
@@ -100,12 +100,12 @@
         }
 
         svg {
-          color: $success-color;
+          color: $title-color;
         }
       }
 
       &.dislike {
-        background-color: rgba(69, 69, 69, 0.492);
+        background-color: $background-color;
         border-radius: 0px 20px 20px 0;
 
         &:hover {
@@ -115,7 +115,7 @@
         }
 
         svg {
-          color: $danger-color;
+          color: $title-color;
         }
       }
     }
@@ -147,7 +147,13 @@
       padding: 7px 15px;
       margin-top: 2rem;
       margin-bottom: 1rem;
-      background-color: rgba(69, 69, 69, 0.492);
+      background-color: $background-color;
+
+      &:hover {
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(61, 61, 61, 0.4);
+        box-shadow: 2px 2px 20px rgba(135, 173, 250, 0.25);
+      }
     }
   }
 }

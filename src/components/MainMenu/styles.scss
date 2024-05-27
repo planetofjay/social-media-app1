@@ -3,8 +3,8 @@
 nav.main {
   display: flex;
   justify-content: space-between;
-  margin: 2rem;  
-  
+  box-shadow: 2px 2px 20px rgba(135, 173, 250, 0.25);
+
   a {
     color: $title-color;
     text-decoration: none;
