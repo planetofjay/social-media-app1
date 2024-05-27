@@ -59,7 +59,7 @@ export default function App() {
 
             <Route path="/preferences" element={<PreferencesPage />} />
 
-            <Route path="/bout-us" element={<AboutUsPage />} >
+            <Route path="/about-us" element={<AboutUsPage />} >
               <Route path="" element={<AboutUsPageIntroduction />} />
               <Route path="mission" element={<AboutUsPageMission />} />
               <Route path="privacy" element={<AboutUsPagePrivacy />} />
