@@ -1,15 +1,15 @@
 // EVERY variables for scss 
-$title-font: 'Lobster', cursive;
-$body-font: 'Roboto', sans-serif;
+// $title-font: 'Lobster', cursive;
+$body-font: "Inconsolata", monospace;
 
-$title-color: #e9d35b;
-$primary-color: #3e497a;
+
+$title-color: #c3c3c3;
+// $primary-color: #3e497a;
 $secondary-color: #62626c;
-$text-color: #bfbebe;
-$border-color: #9e9ea4;
-$background-color: #e1e1e9;
-$success-color: #0dc729;
-$danger-color: #cd2424;
+// $border-color: #9e9ea4;
+$background-color: hsl(0, 0%, 5%);
+$success-color: #67c776;
+$danger-color: #bf4f4f;
 
 @mixin breakpoint($min-width) {
   @media only screen and (min-width: $min-width) {

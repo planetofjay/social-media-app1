@@ -1,9 +1,6 @@
 # Project - Social Media App
 
-<img width="90%" src="images/home.png">
-<img width="90%" src="images/posts.png">
-<img width="90%" src="images/preferences.png">
-<img width="90%" src="images/about-us.png">
+Latest update: 2024-05-26
 
 # Getting Started with Create React App
 

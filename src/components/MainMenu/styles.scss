@@ -3,28 +3,21 @@
 nav.main {
   display: flex;
   justify-content: space-between;
-  margin: 2rem;
-  border-radius: 20px;
-  
+  margin: 2rem;  
   
   a {
-    color: $text-color;
+    color: $title-color;
     text-decoration: none;
     text-align: center;
     width: 100%;
 
     &:hover {
-      transform: scale(1.1);
-      border-radius: 20px;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(56, 58, 69, 0.4);
+      transform: scale(0.9);
     }
 
-    &.active {
-      color: #fff;
-      border-radius: 20px;
-      box-shadow: 4px 4px 6px 4px rgba(135, 173, 250, 0.25);
-    }
+    // &.active {
+    //   box-shadow: 
+    // }
 
     @include breakpoint-small {
       padding: 0.75rem 1.5rem;
