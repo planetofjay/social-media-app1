@@ -51,15 +51,15 @@ export default function App() {
         : (
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/planetof" element={<Homepage />} />
+            <Route path="/social-media-app1" element={<Homepage />} />
 
-            <Route path="/planetof/posts" element={<PostListPage />} />
-            <Route path="/planetof/posts/:id" element={<PostItemPage />} />
-            <Route path="/planetof/posts/add" element={<PostFormPage />} />
+            <Route path="/social-media-app1/posts" element={<PostListPage />} />
+            <Route path="/social-media-app1/posts/:id" element={<PostItemPage />} />
+            <Route path="/social-media-app1/posts/add" element={<PostFormPage />} />
 
-            <Route path="/planetof/preferences" element={<PreferencesPage />} />
+            <Route path="/social-media-app1/preferences" element={<PreferencesPage />} />
 
-            <Route path="/planetof/about-us" element={<AboutUsPage />} >
+            <Route path="/social-media-app1/about-us" element={<AboutUsPage />} >
               <Route path="" element={<AboutUsPageIntroduction />} />
               <Route path="mission" element={<AboutUsPageMission />} />
               <Route path="privacy" element={<AboutUsPagePrivacy />} />
